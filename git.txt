@@ -1,0 +1,16 @@
+git create connections with github
+git clone <remote_repository_url>
+
+git remotely add a repo on your github account
+git remote add <remote_name> <new_remote_url>
+
+git display the URL of the repo on github
+git remote -v
+
+git see the recent updates 
+git fetch
+after that: 1/git merge <branch to master> 2/git rebase the commits
+
+git change branch 
+git checkout <branch_name>
+
