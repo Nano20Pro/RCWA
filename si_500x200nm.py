@@ -44,6 +44,7 @@ afmm.bend(2e-6)
 # Some commands give back a return value.
 neff = afmm.solve()
 
+#display part
 modelistEx = afmm.outgmodes("Ex",50,21)
 modelistEy = afmm.outgmodes("Ey",50,21)
 
