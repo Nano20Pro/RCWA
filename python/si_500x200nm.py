@@ -11,8 +11,10 @@ afmm.banner()
 
 afmm.wants("propagation")
 # AFMM commands are mapped directly into Python functions:
-afmm.size(1.5e-6,1.5e-6)
-afmm.harmonics(21,21)
+afmm.parsescript("""size 1.5e-6 1.5e-6
+harmonics 21 21""")
+
+#afmm.harmonics(21,21)
 afmm.wavelength(1.55e-6)
 
 
@@ -36,8 +38,8 @@ struct = afmm.inpstruct(30,25,"im")
 
 # Here we represent the structure in the text terminal (quite crudely, but
 # it gives an idea, still).
-print
-pl.printmap(struct)
+#print
+#pl.printmap(struct)
 afmm.bend(2e-6)
 # afmm.order(19, 20)
 
@@ -48,11 +50,16 @@ neff = afmm.solve()
 modelistEx = afmm.outgmodes("Ex",50,21)
 modelistEy = afmm.outgmodes("Ey",50,21)
 
-print
-k=0
-for mode in modelistEx:
-    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
-    pl.printmap(modelistEx[k])
-    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
-    pl.printmap(modelistEy[k])
-    k+=1
+#afmm.parsescript("outgmodes Ex o 21 21 filetest_Si_o")
+
+
+
+#print
+#k=0
+#for mode in modelistEx:
+#    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
+#    pl.printmap(modelistEx[k])
+#    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
+#    pl.printmap(modelistEy[k])
+#    k+=1
+#

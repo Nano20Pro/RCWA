@@ -44,7 +44,7 @@ afmm.rectangle(3.5+0j*0,500e-9,150e-9,0,0)
 
 
 # Get the refractive index distribution
-struct = afmm.inpstruct(30,25,"im")
+struct = afmm.inpstruct(30,25,"im","test_angle_gnuplot.f3d")
 
 # Some commands give back a return value.
 afmm.carpet()
