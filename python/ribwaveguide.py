@@ -11,14 +11,12 @@ layerThick=1e-6
 
 afmm.parsescript(
 """
-wants ( "propagation" )
 size windowSizex windowSizey
 harmonics 21 21
 wavelength 1.55e-6
 
 section 2.5e-6
                   
-
 substrate 1+0j
 
 
