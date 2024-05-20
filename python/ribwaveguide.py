@@ -9,16 +9,16 @@ coreSizex=1e-6
 coreSizey=0.8e-6
 layerThick=1e-6
 
-afmm.parsescript("size {windowSizex} {windowSizey}")
+afmm.parsescript(f"size {windowSizex} {windowSizey}")
 afmm.parsescript("harmonics 21 21")
 afmm.parsescript("wavelength 1.55e-6")
 afmm.parsescript("section 2.5e-6")
 afmm.parsescript("substrate 1+0j")
 afmm.parsescript("matdev la 0.0")
 afmm.parsescript("pml_transf .2e-6 .2e-6 .5-0.5j")
-afmm.parsescript("rectangle 2.234+0j*0 {coreSizex} {coreSizey} 0")
-afmm.parsescript("rectangle 2.234+0j*0 {windowSizex} {layerThick} 0 ({coreSizey}/2+{layerThick}/2)")
-afmm.parsescript("rectangle 1.+0j*0 {windowSizex} {windowSizey}/2-({layerThick}+{coreSizey}/2) 0 ({windowSizey}/2-({layerThick}+{coreSizey}/2))/2+{coreSizey}/2+{layerThick}")
+afmm.parsescript(f"rectangle 2.234+0j*0 {coreSizex} {coreSizey} 0")
+afmm.parsescript(f"rectangle 2.234+0j*0 {windowSizex} {layerThick} 0 ({coreSizey}/2+{layerThick}/2)")
+afmm.parsescript(f"rectangle 1.+0j*0 {windowSizex} {windowSizey}/2-({layerThick}+{coreSizey}/2) 0 ({windowSizey}/2-({layerThick}+{coreSizey}/2))/2+{coreSizey}/2+{layerThick}")
 
 
 # Get the refractive index distribution
