@@ -34,7 +34,7 @@ afmm.pml_transf(.2e-6,.2e-6,.5-0.5j)
 afmm.rectangle(3.5+0j*0,500e-9,200e-9,0,0)
 
 # Get the refractive index distribution
-struct = afmm.inpstruct(30,25,"im")
+afmm.parsescript("inpstruct im 30 25 input_file")
 
 # Here we represent the structure in the text terminal (quite crudely, but
 # it gives an idea, still).

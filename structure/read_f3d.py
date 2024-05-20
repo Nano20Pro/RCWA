@@ -39,3 +39,6 @@ def read_f3d_fct(file_E):
 
     # Show the plot
     plt.show()
+    
+    
+read_f3d_fct("input_file.f3d")
