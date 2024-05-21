@@ -40,26 +40,26 @@ afmm.parsescript("inpstruct im 30 25 input_file")
 # it gives an idea, still).
 #print
 #pl.printmap(struct)
-afmm.bend(2e-6)
+
+#afmm.bend(2e-6)
+
 # afmm.order(19, 20)
 
 # Some commands give back a return value.
 neff = afmm.solve()
 
 #display part
-modelistEx = afmm.outgmodes("Ex",50,21)
-modelistEy = afmm.outgmodes("Ey",50,21)
+modelistEx = afmm.outgmodes("Ex",100,21)
+modelistEy = afmm.outgmodes("Ey",100,21)
 
-#afmm.parsescript("outgmodes Ex o 21 21 filetest_Si_o")
+afmm.parsescript("outgmodes Ex o 21 21 filetest_Si_o")
 
 
+k=0
+for mode in modelistEx:
+    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
+    pl.printmap(modelistEx[k])
+    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
+    pl.printmap(modelistEy[k])
+    k+=1
 
-#print
-#k=0
-#for mode in modelistEx:
-#    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
-#    pl.printmap(modelistEx[k])
-#    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
-#    pl.printmap(modelistEy[k])
-#    k+=1
-#
