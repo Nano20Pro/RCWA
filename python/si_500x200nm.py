@@ -46,20 +46,41 @@ afmm.parsescript("inpstruct im 30 25 input_file")
 # afmm.order(19, 20)
 
 # Some commands give back a return value.
-neff = afmm.solve()
+#neff = afmm.solve()
 
 #display part
-modelistEx = afmm.outgmodes("Ex",100,21)
-modelistEy = afmm.outgmodes("Ey",100,21)
+#modelistEx = afmm.outgmodes("Ex",100,21)
+#modelistEy = afmm.outgmodes("Ey",100,21)
 
-afmm.parsescript("outgmodes Ex o 21 21 filetest_Si_o")
+#afmm.parsescript("outgmodes Ex o 21 21 filetest_Si_o")
 
 
-k=0
-for mode in modelistEx:
-    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
-    pl.printmap(modelistEx[k])
-    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
-    pl.printmap(modelistEy[k])
-    k+=1
+afmm.parsescript("""
+solve
+select 1""")
+
+afmm.parsescript("""
+modepos
+let posA = ans(0)
+let posB = ans(3)
+print posA
+print posB
+""")
+
+afmm.parsescript("""
+excitation "f" "id" 1.0 0.0 129 0
+excitation "f" "id" 1.0 0.0 131 0
+assemble
+propagation Ex m 1.5e-6 50 50 propag.txt
+""")
+
+
+
+#k=0
+#for mode in modelistEx:
+#    print ("Mode: ",k,"n_eff=",neff[k]," |Ex| ")
+#    pl.printmap(modelistEx[k])
+#    print ("Mode: ",k,"n_eff=",neff[k]," |Ey| ")
+#    pl.printmap(modelistEy[k])
+#    k+=1
 

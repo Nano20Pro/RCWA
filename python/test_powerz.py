@@ -47,9 +47,7 @@ neff = afmm.solve()
 afmm.parsescript("assemble")
 afmm.parsescript("excitation f cy 1 0 0 0")
 #afmm.parsescript("propagation Ex2 m 100e-9 101 101 test_results_x.txt");
-afmm.parsescript("outgmodes Ex m 101 101 mode_file")
-
-afmm.powerz(0.27e-6);
+#afmm.parsescript("outgmodes Ex m 101 101 mode_file")
 
 
 
