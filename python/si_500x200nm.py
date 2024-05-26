@@ -3,10 +3,27 @@
 import pyAFMM as afmm
 
 import plot2Dascii as pl
+import os
+import shutil
 
 
-# Show the program AFMM banner and credits
-afmm.banner()
+
+def movefile(input_file,output_folder):
+    # Specify the source file path
+    source_path = f"/home/rigel/Documents/Project/RCWA/python/{input_file}"
+
+    # Specify the destination directory
+    destination_dir = f"/home/rigel/Documents/Project/RCWA/{output_folder}"
+
+    # Construct the full destination path
+    destination_path = os.path.join(destination_dir, os.path.basename(source_path))
+    # Move the file
+    try:
+        shutil.move(source_path, destination_path)
+        print(f"File moved to {destination_path}")
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    return 0
 
 
 afmm.wants("propagation")
@@ -34,7 +51,9 @@ afmm.pml_transf(.2e-6,.2e-6,.5-0.5j)
 afmm.rectangle(3.5+0j*0,500e-9,200e-9,0,0)
 
 # Get the refractive index distribution
-afmm.parsescript("inpstruct im 30 25 input_file")
+afmm.parsescript("inpstruct im 30 25 inputstruct.f3d")
+movefile("inputstruct.f3d","output")
+
 
 # Here we represent the structure in the text terminal (quite crudely, but
 # it gives an idea, still).
@@ -58,6 +77,9 @@ afmm.parsescript("inpstruct im 30 25 input_file")
 afmm.parsescript("""
 solve
 select 1""")
+
+
+
 
 afmm.parsescript("""
 modepos

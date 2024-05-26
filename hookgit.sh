@@ -7,13 +7,16 @@ COMMIT_RANGE="HEAD~1 HEAD"
 # Get the renamed files
 changed_files=$(git diff --name-status --diff-filter=ACDM $COMMIT_RANGE)
 
+modified_python_files=()
 
-# Check if there are renamed files
-if [ -n "$changed_files" ]; then
-    echo "changed files:"
-    echo "$changed_files"
-else
-    echo "No changed files found."
-fi
+cd ..
+
+# Filter the modified files to include only those in the python/ directory
+for file in $changed_files; do
+    if [[ $file == python/*.py ]]; then
+        python $file
+    fi
+done
+
 
 
