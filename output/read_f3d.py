@@ -20,7 +20,6 @@ def count_mesh_size(df):
     return size_x,size_y,x1,x2,y1,y2
 
 def read_f3d_fct(file_E):  
-    #%% Read the header of the simulation file
     # Read the size of the simulated window and the number of points
     with open(file_E) as f:
         f.readline()
@@ -128,12 +127,12 @@ def read_modes_fct(file_E):
     plt.show()
     return 0
 
+
+
+
 ###
 #read_f3d_fct("filetest_Si_o_Ex_o_1.f3d")
 #read_structure_fct("filetest_Si_o_Ex_o_1.f3d")
-
-for i in range(4):
+for i in range(3):
     filename = f"filetest_Si_r_Ex_r_{i}.mode"  # Adjust the filename pattern as needed
     read_modes_fct(filename)
-
-
