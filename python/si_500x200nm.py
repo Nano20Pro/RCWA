@@ -33,13 +33,7 @@ harmonics 21 21""")
 
 #afmm.harmonics(21,21)
 afmm.wavelength(1.55e-6)
-
-
 afmm.section(2.5e-6)
-# Each time in an AFMM script command there is a complex number
-# to specify this is done by means of the real and imaginary part.
-# In the Python access, this is handled directly by means of 
-# complex variables, as in the following command:
 afmm.substrate(1.44+0j)
 
 
