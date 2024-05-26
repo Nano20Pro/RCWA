@@ -16,7 +16,7 @@ afmm.parsescript("section 2.5e-6")
 afmm.parsescript("substrate 1 0")
 afmm.parsescript("matdev la 0.0")
 afmm.parsescript("pml_transf .2e-6 .2e-6 .5 -0.5")
-afmm.parsescript(f"rectangle 2.234 0 {coreSizex} {coreSizey} 0")
+afmm.parsescript(f"rectangle 2.234 0 {coreSizex} {coreSizey} 0 0")
 afmm.parsescript(f"rectangle 2.234 0 {windowSizex} {layerThick} 0 ({coreSizey}/2+{layerThick}/2)")
 afmm.parsescript(f"rectangle 1 0 {windowSizex} {windowSizey}/2-({layerThick}+{coreSizey}/2) 0 ({windowSizey}/2-({layerThick}+{coreSizey}/2))/2+{coreSizey}/2+{layerThick}")
 
