@@ -5,14 +5,15 @@ cd /home/rigel/Documents/Project/RCWA/python
 COMMIT_RANGE="HEAD~1 HEAD"
 
 # Get the renamed files
-renamed_files=$(git diff --name-status --diff-filter=R $COMMIT_RANGE)
+changed_files=$(git diff --name-status --diff-filter=ACDM $COMMIT_RANGE)
+
 
 # Check if there are renamed files
-if [ -n "$renamed_files" ]; then
-    echo "Renamed files:"
-    echo "$renamed_files"
+if [ -n "$changed_files" ]; then
+    echo "changed files:"
+    echo "$changed_files"
 else
-    echo "No renamed files found."
+    echo "No changed files found."
 fi
 
 

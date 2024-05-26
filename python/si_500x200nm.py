@@ -61,8 +61,6 @@ select 1""")
 
 afmm.parsescript("""
 modepos
-let posA = ans(0)
-let posB = ans(3)
 print posA
 print posB
 """)
